@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if y %} 
+    
+      <div class="mc">{{y.news_name}}</div><br>
+      <div class="mc">{{y.news_description|safe}}</div>
+      <div class="mc">{{y.news_date}}</div>
+      
+      <br />
+    {% endif %}
+
+</body>
+</html>

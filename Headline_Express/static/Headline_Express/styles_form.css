@@ -1,0 +1,45 @@
+.f>form>div>input {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    /* opacity: 0.2; */
+    /* border: 0.3vw  rgb(127, 6, 6); */
+    border-style: groove;
+}
+
+.f>form>div>label {
+    color: white
+}
+
+.f>form>input {
+    border-radius: 5%;
+    color: aliceblue;
+}
+
+body {
+
+    background: url("https://cdn.pixabay.com/photo/2018/02/15/14/37/paper-3155438_1280.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.f>form {
+    /* background-color: aquamarine; */
+    -webkit-backdrop-filter: blur(9px);
+    backdrop-filter: blur(9px);
+    display: flexbox;
+    box-sizing: border-box;
+    width: fit-content;
+    min-height: fit-content;
+
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border:0.05vw solid black;
+    box-shadow:  1px 2px 25px black, 0 0 25px rgb(155, 155, 165);
+    
+    border-radius: 10%;
+}

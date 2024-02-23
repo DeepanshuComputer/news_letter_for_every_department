@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background: rgb(213,208,210);
+  background: linear-gradient(180deg, rgba(213,208,210,1) 100%, rgba(180,180,180,1) 100%);" >
+    {% include 'Headline_Express/navbar.html' %}
+    {% if obj %} {% for y in obj %}
+    <div style="margin: 3vh 0vw;">
+      <div class="container alert alert-light text-center">
+      <div class="mc">{{y.news_name}}</div><br>
+      <a href="{% url 'news_letter' %}?id={{y.id}}">
+        Click Here
+    </a>
+  </div>
+  </div>
+    {% endfor %} {% endif %}
+    {% include 'Headline_Express/footer.html' %}
+  </body>
+</html>
