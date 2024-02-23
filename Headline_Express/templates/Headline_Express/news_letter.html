@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="min-height: 100vh;">
     {% if y %} 
     
       <div class="mc">{{y.news_name}}</div><br>
@@ -14,6 +14,10 @@
       
       <br />
     {% endif %}
+
+   
+      {% include 'Headline_Express/footer.html' %}
+    </footer>
 
 </body>
 </html>
