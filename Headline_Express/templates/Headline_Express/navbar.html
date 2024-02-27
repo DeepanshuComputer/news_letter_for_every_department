@@ -12,21 +12,19 @@
     /> -->
 
     <style>
-      #nav1{
+      #nav1 {
         background: rgb(0, 0, 0);
       }
 
-
-      #nav_id img{
+      #nav_id img {
         margin-top: 4px;
         margin-bottom: 4px;
-        height: 100px;;
+        height: 100px;
         width: 100px;
         margin-right: 20px;
-        
       }
 
-      #nav_text{
+      #nav_text {
         font-size: 20px;
         color: aliceblue;
       }
@@ -34,15 +32,15 @@
   </head>
   <body>
     <div>
-      <nav id="nav1" class="navbar navbar-expand-lg ">
-        <div id =nav_id class="container-fluid">
+      <nav id="nav1" class="navbar navbar-expand-lg">
+        <div id="nav_id" class="container-fluid">
           <img
             src="https://static.vecteezy.com/system/resources/thumbnails/000/547/335/small/mail-06.jpg"
-            style="border-radius: 100px;"
+            style="border-radius: 100px"
           />
 
           <button
-            style="color: aliceblue;"
+            style="color: aliceblue"
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -59,41 +57,61 @@
               style="--bs-scroll-height: 100px"
             >
               <li class="nav-item">
-                <a id="nav_text" class="nav-link active" aria-current="page" href="/home">Headline Express</a>
+                <a
+                  id="nav_text"
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/home"
+                  >Headline Express</a
+                >
               </li>
               <li class="nav-item">
                 <a id="nav_text" class="nav-link" href="all_news">All News </a>
               </li>
 
-
-
               <li class="nav-item">
-                <a id="nav_text" class="nav-link" href="news_category">News Category</a>
-              </li>
-              
-              
-
-              <li class="nav-item">
-                <a id="nav_text" class="nav-link" href="/Subscribe">Subscribe</a>
+                <a id="nav_text" class="nav-link" href="news_category"
+                  >News Category</a
+                >
               </li>
 
               <li class="nav-item">
-                <a id="nav_text" class="nav-link" href="Post_news_letter">Post News-Letter</a>
+                <a id="nav_text" class="nav-link" href="/Subscribe"
+                  >Subscribe</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a id="nav_text" class="nav-link" href="Post_news_letter"
+                  >Post News-Letter</a
+                >
               </li>
 
               <li class="nav-item dropdown">
-                <a id="nav_text" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                <a
+                  id="nav_text"
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   CONTACT
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item " active href="about_us">ABOUT US</a></li>
-                  <li><a class="dropdown-item" active href="https://mriirs.edu.in/">Collage Official Site</a></li>
+                  <li>
+                    <a class="dropdown-item" active href="about_us">ABOUT US</a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      active
+                      href="https://mriirs.edu.in/"
+                      >Collage Official Site</a
+                    >
+                  </li>
                 </ul>
               </li>
-
-
-            
-              
             </ul>
             <form class="d-flex" role="search">
               <input
@@ -106,6 +124,33 @@
                 Search
               </button>
             </form>
+
+            <!--  -->
+
+            <div id="nav_text" style="display: flex;flex-direction: row;">
+              {% if user.is_authenticated %}
+              <p class="mt-2 px-2">Welcome {{ user.username }}</p>
+
+              <a class="btn btn-primary" href="{% url 'logoutuser' %}"
+                >Logout</a
+              >
+
+              {% else %}
+              <form
+                class="d-flex"
+                action="{% url 'loginuser' %}"
+                method="get"
+              >
+                {% csrf_token %}
+                <button class="btn btn-primary" type="submit">Login</button>
+              </form>
+              <form action="{% url 'signupuser' %}" method="get" class="d-flex">
+                {% csrf_token %}
+                <button class="btn btn-primary" type="submit">Register</button>
+              </form>
+              {% endif %}
+            </div>
+            <!--  -->
           </div>
         </div>
       </nav>

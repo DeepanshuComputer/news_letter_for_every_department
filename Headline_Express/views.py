@@ -111,7 +111,7 @@ def Post_news_letter(request):
 
 def loginuser(request):
     if request.method == 'GET':
-        return render(request, 'myblogs/loginuser.html', {'form':AuthenticationForm()})
+        return render(request, 'Headline_Express/loginuser.html', {'form':AuthenticationForm()})
     else:
         a= request.POST.get('username') 
         b= request.POST.get('password') 

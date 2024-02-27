@@ -36,6 +36,7 @@ urlpatterns = [
     path('loginuser', views.loginuser, name='loginuser'),
     path('signupuser', views.signupuser, name='signupuser'),
     path('about_us', views.about_us, name='about_us'),
+    path('logoutuser', views.logoutuser, name='logoutuser'),
 ]
 
 if settings.DEBUG:
