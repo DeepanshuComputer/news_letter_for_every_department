@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'Headline_Express/navbar.html' %}
+    
+    <div id="home1" class="container"><center>
+        <div class="mt-2"><h2>DEPARTMENT</h2></div>
+        {% if obj %} {% for y in obj %}
+        <!-- card  starts here -->
+        <div class=" card mb-3 text-align:center" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-5.5">
+              <img
+                src="{{ y.main_image.url}}" 
+                style="height: 100%; width: 100%;"
+                class="img-fluid rounded-start"  alt="..."/>
+            </div>
+            <div class="col-md-7" style="flex:1;">
+              <div class="card-body">
+                <h5 class="card-title">{{y.main_dep}}</h5>
+                <p class="card-text">{{y.main_desc}}</p>
+                
+                <a type="submit" style="color: blue;" class="btn" href="{% url 'dep_cat' %}?id={{y.id}}"type="submit"
+                class="btn btn-primary"
+                >Read More..</a>
+                                  
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card end here -->
+  
+        {% endfor %} {% endif %}
+    </div></center>
+  
+    
+  
+    {% include 'Headline_Express/footer.html' %}
+</body>
+</html>

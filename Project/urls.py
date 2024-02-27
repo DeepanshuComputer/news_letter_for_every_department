@@ -15,9 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path  , include
 from django.conf.urls import include
-from  Headline_Express import views
+from Headline_Express import views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -30,8 +30,12 @@ urlpatterns = [
     path('dep_cat', views.dep_cat, name='dep_cat'),
     path('dep_cat_news', views.dep_cat_news, name='dep_cat_news'),
     path('news_letter', views.news_letter, name='news_letter'),
-    
-    
+    path('all_news', views.all_news, name='all_news'),
+    path('news_category' , views.news_category, name='news_category'),
+    path('Post_news_letter', views.Post_news_letter, name='post_news_letter'),
+    path('loginuser', views.loginuser, name='loginuser'),
+    path('signupuser', views.signupuser, name='signupuser'),
+    path('about_us', views.about_us, name='about_us'),
 ]
 
 if settings.DEBUG:

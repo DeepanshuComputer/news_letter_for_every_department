@@ -19,25 +19,51 @@
   </head>
   <body
     style="
-      background: rgb(213, 208, 210);
+      background: rgb(103, 74, 252);
       background: linear-gradient(
         180deg,
-        rgba(213, 208, 210, 1) 100%,
-        rgba(180, 180, 180, 1) 100%
+        rgb(108, 191, 255) 100%,
+        rgb(239, 13, 13) 100%
       );
     "
   >
-    {% include 'Headline_Express/navbar.html' %}
+  {% include 'Headline_Express/navbar.html' %}
 
-    <div class="container alert alert-primary text-center">
-      <h1>Headline Express</h1>  
-      <img id="homeimg1" class="mt-2" style="width: 100%;height: 100%;" src= "https://cdn.pixabay.com/photo/2015/02/22/09/32/news-644847_1280.jpg">
+  <div class="container alert alert-primary text-center">
+    <h1>Headline Express</h1> 
+
+    <img id="homeimg1" class="mt-2" style="width: 100%;height: 100%;" src= "https://cdn.pixabay.com/photo/2015/02/22/09/32/news-644847_1280.jpg">
+  </div>
+
+    <center><div style="color: #fff;"><h1>Recent News</h1></center></div> 
+  <div class="container" style="display:flex;flex-wrap: wrap; width: 100%;">
+  
+    {% if all_news %}
+    {% for news in all_news %}
+    <div class="card" style="width: 25%">
+      <img class="card-img-top" style="height: 20vh;" src="{{news.news_img.url}}" alt="Card image cap">
+      
+      <div class="card-body">
+        <h5  class="card-title" style="min-height: 20vh;font-size: 2vw;text-align: center;">{{news.news_name}}</h5>
+        <footer>
+          <center>
+          <a href="{% url 'news_letter' %}?id={{news.id}}" class="btn btn-primary" style="font-size: 1.5vw;">Go somewhere</a></center>
+        </footer>
+        
+      </div>
     </div>
-    <div id="home1" class="container"><center>
-      {% if obj %} {% for y in obj %}
+    {% endfor %}
+    {% endif %}
+  </div>
+    
 
-      <!-- card  starts here -->
-      <div class="card mb-3 text-align:center" style="max-width: 540px">
+
+    
+    <!-- <div id="home1" class="container"><center>
+      <div class="mt-2"><h2>DEPARTMENT</h2></div>
+      {% if obj %} {% for y in obj %} -->
+                                                                        <!-- card  starts here -->
+      <!-- <div class=" card mb-3 text-align:center" style="max-width: 540px">
         <div class="row g-0">
           <div class="col-md-5.5">
             <img
@@ -49,29 +75,30 @@
             <div class="card-body">
               <h5 class="card-title">{{y.main_dep}}</h5>
               <p class="card-text">{{y.main_desc}}</p>
+              
+              <a type="submit" style="color: blue;" class="btn" href="{% url 'dep_cat' %}?id={{y.id}}"type="submit"
+              class="btn btn-primary"
+              >Read More..</a>
               <p class="card-text">
                 <small class="text-body-secondary"
                   >Last updated 3 mins ago</small
                 >
               </p>
-              <a type="submit" class="btn" href="{% url 'dep_cat' %}?id={{y.id}}"type="submit"
-              class="btn btn-primary"
-              >Read More..</a>
-                {{y.main_dep}}
+                
               </a>
             </div>
           </div>
         </div>
-      </div>
-      <!-- card end here -->
+      </div> -->
+                                                                                      <!-- card end here -->
 
       <!-- <a href="{% url 'dep_cat' %}?id={{y.id}}">
         <div class="mc">{{y.main_dep}}</div>
       </a> -->
 
 
-      {% endfor %} {% endif %}
-    </div></center>
+      <!-- {% endfor %} {% endif %}
+    </div></center> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

@@ -1,13 +1,11 @@
 .f>form>div>input {
     background-color: rgba(0, 0, 0, 0);
     color: white;
-    /* opacity: 0.2; */
-    /* border: 0.3vw  rgb(127, 6, 6); */
     border-style: groove;
 }
 
 .f>form>div>label {
-    color: white
+    color: white;
 }
 
 .f>form>input {
@@ -18,9 +16,8 @@
 body {
 
     background: url("https://cdn.pixabay.com/photo/2018/02/15/14/37/paper-3155438_1280.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+    /* background-size: cover; */
+    background-size: contain;
 }
 
 .f>form {
@@ -29,10 +26,12 @@ body {
     backdrop-filter: blur(9px);
     display: flexbox;
     box-sizing: border-box;
-    width: fit-content;
-    min-height: fit-content;
-
+    width: 50vh;
+    min-height: 40vh;
     margin: 0;
+    text-align: center;
+    justify-content: center;
+    vertical-align:middle;
     position: absolute;
     top: 50%;
     left:50%;
@@ -40,6 +39,21 @@ body {
     transform: translate(-50%, -50%);
     border:0.05vw solid black;
     box-shadow:  1px 2px 25px black, 0 0 25px rgb(155, 155, 165);
-    
     border-radius: 10%;
+    background:rgba(0, 0, 0,0.3);
+    padding : 3vw;
+}
+
+.f>form>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: large;
+    font-weight: 1000;
+    text-shadow: 0px 0px 5px #000000;
+    margin-bottom: 7vh;
+    justify-self: center;
 }

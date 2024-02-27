@@ -3,20 +3,30 @@ footer {
     color: white;
     text-align: center;
 }
+
+
 .footer-content h3 {
     text-align: center; /* Center the heading */
 }
+
+
 .footer-content {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
+
+
 .socials li {
     display: inline;
-    margin-right: 10px;
+    margin-right: 20px;
 }
+
+
 .socials a {
     color: white;
     text-decoration: none;  
 }
+
+
 .footer-bottom {
     color: #bbbbbb;
 } 

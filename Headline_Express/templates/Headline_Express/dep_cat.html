@@ -8,8 +8,12 @@
 </head>
 <body style="background: rgb(213,208,210);
 background: linear-gradient(180deg, rgba(213,208,210,1) 100%, rgba(180,180,180,1) 100%);" >
+
+    
+
     {% include 'Headline_Express/navbar.html' %}
 <div style="margin: 3vh 0vw;">
+    <center><div style="color: #fff;"><h1>DEPARTMENT BRANCH</h1></div> </center>   
     {% if obj %} {% for y in obj %}
     <div class="container alert alert-light text-center"> 
     <a style="font-size: 2vw;cursor: pointer;text-decoration: none;" href="{% url 'dep_cat_news' %}?id={{y.id}}">
@@ -17,6 +21,6 @@ background: linear-gradient(180deg, rgba(213,208,210,1) 100%, rgba(180,180,180,1
     </div>
     {% endfor %} {% endif %}
 </div>
-{% include 'Headline_Express/footer.html' %}
+{% include 'Headline_Express/footer1.html' %}
 </body>
 </html>

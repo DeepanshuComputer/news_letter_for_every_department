@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'Headline_Express/navbar.html' %}
+    <div class="container" style="display:flex;flex-wrap: wrap; width: 100%;">
+  
+        <div class="mt-2 container"><h2><center>ALL NEWS</center></h2></div>
+          {% if all_news %}
+          {% for news in all_news %}
+          <div class="card" style="width: 25%">
+            <img class="card-img-top" style="height: 20vh;" src="{{news.news_img.url}}" alt="Card image cap">
+            
+            <div class="card-body">
+              <h5  class="card-title" style="min-height: 20vh;font-size: 2vw;text-align: center;">{{news.news_name}}</h5>
+              <footer>
+                <center>
+                <a href="{% url 'news_letter' %}?id={{news.id}}" class="btn btn-primary" style="font-size: 1.5vw;">Go somewhere</a></center>
+              </footer>
+              
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+        {% include 'Headline_Express/footer.html' %}     
+  
+</body>
+</html>

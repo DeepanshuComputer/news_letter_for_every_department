@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% include 'Headline_Express/navbar.html' %}
+  </head>
+  <body>
+    <div class="XXX">
+      <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{News_Form}}
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    {% include 'Headline_Express/footer1.html' %}
+  </body>
+</html>
